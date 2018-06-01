@@ -19,12 +19,12 @@ StatPane::StatPane(int x, int y, int width, int height) : Pane(x, y, width, heig
 StatPane::~StatPane() {}
 
 void StatPane::Draw() {
-  wattron(window_, COLOR_PAIR(2));
+  wattron(window_, COLOR_PAIR(COLOR_STATUS));
   mvwprintw(window_, 1, 2, "AIRCRAFT : AAAAA");
   mvwprintw(window_, 2, 2, "BATTLESHIP : BBBB");
   mvwprintw(window_, 3, 2, "CRUISER : CCC");
   mvwprintw(window_, 4, 2, "DESTROYER : DD DD");
-  wattroff(window_, COLOR_PAIR(2));
+  wattroff(window_, COLOR_PAIR(COLOR_STATUS));
 
   wrefresh(window_);
 }
@@ -37,10 +37,10 @@ InputPane::InputPane(int x, int y, int width, int height) : Pane(x, y, width, he
 InputPane::~InputPane() {}
 
 void InputPane::Draw() {
-  wattron(window_, COLOR_PAIR(3));
+  wattron(window_, COLOR_PAIR(COLOR_INPUT));
   mvwprintw(window_, 1, 2, "Input position...(ex A 3)");
   mvwprintw(window_, 2, 2, "Input : ");
-  wattroff(window_, COLOR_PAIR(3));
+  wattroff(window_, COLOR_PAIR(COLOR_INPUT));
 
   wrefresh(window_);
 }

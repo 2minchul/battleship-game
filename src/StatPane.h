@@ -12,6 +12,7 @@
 #ifndef BATTLESHIP_STATPANE_H_
 #define BATTLESHIP_STATPANE_H_
 
+#include <ncurses.h>
 #include "Pane.h"
 
 class StatPane : Pane {

@@ -9,10 +9,16 @@
  * 20163137 이민철
  */
 
-#include <curses.h>
+
 
 #ifndef BATTLESHIP_PANE_H_
 #define BATTLESHIP_PANE_H_
+
+#include <ncurses.h>
+
+#define COLOR_MAP 1
+#define COLOR_STATUS 2
+#define COLOR_INPUT 3
 
 class Pane {
  public:

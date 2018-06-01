@@ -12,7 +12,6 @@
 #ifndef BATTLESHIP_BATTLESHIPAPP_H_
 #define BATTLESHIP_BATTLESHIPAPP_H_
 
-
 #include <ncurses.h>
 #include "BattleShipMap.h"
 #include "StatPane.h"
@@ -37,6 +36,5 @@ class BattleShipApp {
   StatPane *stat_pane_;
   InputPane *input_pane_;
 };
-
 
 #endif  // BATTLESHIP_BATTLESHIPAPP_H_

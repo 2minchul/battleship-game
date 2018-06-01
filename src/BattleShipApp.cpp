@@ -19,9 +19,9 @@ void BattleShipApp::init() {
   refresh();
 
   //컬러 세팅
-  init_pair(1, COLOR_GREEN, COLOR_BLACK);
-  init_pair(2, COLOR_CYAN, COLOR_BLACK);
-  init_pair(3, COLOR_YELLOW, COLOR_BLACK);
+  init_pair(COLOR_MAP, COLOR_GREEN, COLOR_BLACK);
+  init_pair(COLOR_STATUS, COLOR_CYAN, COLOR_BLACK);
+  init_pair(COLOR_INPUT, COLOR_YELLOW, COLOR_BLACK);
 
   map_ = new BattleShipMap();
   stat_pane_ = new StatPane(30, 3, 30, 6);

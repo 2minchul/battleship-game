@@ -32,13 +32,13 @@ BattleShipMap::BattleShipMap() : Pane(4, 4, MAP_SIZE + 3, MAP_SIZE + 2) {
 BattleShipMap::~BattleShipMap() {}
 
 void BattleShipMap::Draw() {
-  wattron(window_, COLOR_PAIR(1));
+  wattron(window_, COLOR_PAIR(COLOR_MAP));
   for (int i = 0; i < MAP_SIZE; ++i) {
     for (int j = 0; j < MAP_SIZE; ++j) {
       mvwprintw(window_, i + 1, j + 2, "%c", map_data_[i][j]);
     }
   }
-  wattroff(window_, COLOR_PAIR(1));
+  wattroff(window_, COLOR_PAIR(COLOR_MAP));
 
   wrefresh(window_);
 }
