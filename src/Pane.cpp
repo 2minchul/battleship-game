@@ -11,19 +11,19 @@
 
 #include "Pane.h"
 
-Pane::Pane(int x, int y, int width, int height) : m_x(x), m_y(y), m_width(width), m_height(height) {
-    m_pWindow = newwin(height, width, y, x);
-    box(m_pWindow, 0, 0);
-    wrefresh(m_pWindow);
+Pane::Pane(int x, int y, int width, int height) : x_(x), y_(y), width_(width), height_(height) {
+  window_ = newwin(height, width, y, x);
+  box(window_, 0, 0);
+  wrefresh(window_);
 }
 
 Pane::~Pane() {
-    delwin(m_pWindow);
+  delwin(window_);
 }
 
 void Pane::Draw() {
-    box(m_pWindow, 0, 0);
-    wrefresh(m_pWindow);
+  box(window_, 0, 0);
+  wrefresh(window_);
 }
 
 Pane::Pane() {}

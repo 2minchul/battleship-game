@@ -9,23 +9,23 @@
  * 20163137 이민철
  */
 
-#ifndef BATTLESHIP_BATTLESHIPMAP_H
-#define BATTLESHIP_BATTLESHIPMAP_H
+#ifndef BATTLESHIP_BATTLESHIPMAP_H_
+#define BATTLESHIP_BATTLESHIPMAP_H_
 
 #include "Pane.h"
 
 #define MAP_SIZE 8
 
-class CBattleShipMap : Pane {
-public:
-    CBattleShipMap();
+class BattleShipMap : Pane {
+ public:
+  BattleShipMap();
 
-    ~CBattleShipMap();
+  ~BattleShipMap();
 
-    void Draw();
+  void Draw();
 
-protected:
-    char m_mapData[MAP_SIZE][MAP_SIZE];
+ protected:
+  char map_data_[MAP_SIZE][MAP_SIZE];
 };
 
-#endif //BATTLESHIP_BATTLESHIPMAP_H
+#endif //BATTLESHIP_BATTLESHIPMAP_H_

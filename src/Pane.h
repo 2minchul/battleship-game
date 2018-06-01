@@ -11,23 +11,23 @@
 
 #include <curses.h>
 
-#ifndef BATTLESHIP_PANE_H
-#define BATTLESHIP_PANE_H
+#ifndef BATTLESHIP_PANE_H_
+#define BATTLESHIP_PANE_H_
 
 class Pane {
-public:
-    Pane(int x, int y, int width, int height);
+ public:
+  Pane(int x, int y, int width, int height);
 
-    Pane();
+  Pane();
 
-    virtual ~Pane();
+  virtual ~Pane();
 
-    virtual void Draw();
+  virtual void Draw();
 
-protected:
-    int m_width, m_height;
-    int m_x, m_y;
-    WINDOW *m_pWindow;
+ protected:
+  int width_, height_;
+  int x_, y_;
+  WINDOW *window_;
 };
 
-#endif //BATTLESHIP_PANE_H
+#endif //BATTLESHIP_PANE_H_

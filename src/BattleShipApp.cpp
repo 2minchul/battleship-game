@@ -9,47 +9,47 @@
  * 20163137 이민철
  */
 
-#include <ncurses.h>
+
 #include "BattleShipApp.h"
 
-void CBattleShipApp::init() {
-    initscr();
-    start_color();
-    cbreak();
-    refresh();
+void BattleShipApp::init() {
+  initscr();
+  start_color();
+  cbreak();
+  refresh();
 
-    //컬러 세팅
-    init_pair(1, COLOR_GREEN, COLOR_BLACK);
-    init_pair(2, COLOR_CYAN, COLOR_BLACK);
-    init_pair(3, COLOR_YELLOW, COLOR_BLACK);
+  //컬러 세팅
+  init_pair(1, COLOR_GREEN, COLOR_BLACK);
+  init_pair(2, COLOR_CYAN, COLOR_BLACK);
+  init_pair(3, COLOR_YELLOW, COLOR_BLACK);
 
-    m_pMap = new CBattleShipMap();
-    m_pStatPane = new StatPane(30, 3, 30, 6);
-    m_pInputPane = new InputPane(30, 15, 30, 4);
+  map_ = new BattleShipMap();
+  stat_pane_ = new StatPane(30, 3, 30, 6);
+  input_pane_ = new InputPane(30, 15, 30, 4);
 }
 
-void CBattleShipApp::Play() {
-    init();
-    Render();
-    Destroy();
+void BattleShipApp::Play() {
+  init();
+  Render();
+  Destroy();
 }
 
-void CBattleShipApp::Render() {
-    mvprintw(1, 1, "<< Battle Ship Game >>");
+void BattleShipApp::Render() {
+  mvprintw(1, 1, "<< Battle Ship Game >>");
 
-    m_pMap->Draw();
-    m_pStatPane->Draw();
-    m_pInputPane->Draw();
+  map_->Draw();
+  stat_pane_->Draw();
+  input_pane_->Draw();
 
-    refresh();
+  refresh();
 }
 
-void CBattleShipApp::Destroy() {
-    getch();
-    endwin();
-    delete m_pMap;
+void BattleShipApp::Destroy() {
+  getch();
+  endwin();
+  delete map_;
 }
 
-CBattleShipApp::~CBattleShipApp() = default;
+BattleShipApp::~BattleShipApp() = default;
 
-CBattleShipApp::CBattleShipApp() = default;
+BattleShipApp::BattleShipApp() = default;

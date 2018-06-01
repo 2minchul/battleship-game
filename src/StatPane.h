@@ -9,29 +9,28 @@
  * 20163137 이민철
  */
 
-#ifndef BATTLESHIP_STATPANE_H
-#define BATTLESHIP_STATPANE_H
+#ifndef BATTLESHIP_STATPANE_H_
+#define BATTLESHIP_STATPANE_H_
 
 #include "Pane.h"
 
 class StatPane : Pane {
-public:
-    StatPane(int x, int y, int width, int height);
+ public:
+  StatPane(int x, int y, int width, int height);
 
-    ~StatPane();
+  ~StatPane();
 
-    virtual void Draw();
+  virtual void Draw();
 
 };
-
 
 class InputPane : public Pane {
-public:
-    InputPane(int x, int y, int width, int height);
+ public:
+  InputPane(int x, int y, int width, int height);
 
-    ~InputPane();
+  ~InputPane();
 
-    virtual void Draw();
+  virtual void Draw();
 };
 
-#endif //BATTLESHIP_STATPANE_H
+#endif //BATTLESHIP_STATPANE_H_

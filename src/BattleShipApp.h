@@ -9,31 +9,34 @@
  * 20163137 이민철
  */
 
-#ifndef BATTLESHIP_BATTLESHIPAPP_H
-#define BATTLESHIP_BATTLESHIPAPP_H
+#ifndef BATTLESHIP_BATTLESHIPAPP_H_
+#define BATTLESHIP_BATTLESHIPAPP_H_
 
+
+#include <ncurses.h>
 #include "BattleShipMap.h"
 #include "StatPane.h"
 
-class CBattleShipApp {
-public:
-    CBattleShipApp();
+class BattleShipApp {
+ public:
+  BattleShipApp();
 
-    ~CBattleShipApp();
+  ~BattleShipApp();
 
-    void Play();
+  void Play();
 
-protected:
-    void init();
+ protected:
+  void init();
 
-    void Render();
+  void Render();
 
-    void Destroy();
+  void Destroy();
 
-protected:
-    CBattleShipMap *m_pMap;
-    StatPane *m_pStatPane;
-    InputPane *m_pInputPane;
+ protected:
+  BattleShipMap *map_;
+  StatPane *stat_pane_;
+  InputPane *input_pane_;
 };
 
-#endif //BATTLESHIP_BATTLESHIPAPP_H
+
+#endif  // BATTLESHIP_BATTLESHIPAPP_H_

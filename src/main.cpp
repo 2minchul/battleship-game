@@ -12,7 +12,7 @@
 #include "BattleShipApp.h"
 
 int main() {
-    CBattleShipApp battleShip;
-    battleShip.Play();
-    return 0;
+  BattleShipApp battleShip;
+  battleShip.Play();
+  return 0;
 }

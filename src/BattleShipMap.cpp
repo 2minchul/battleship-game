@@ -11,34 +11,34 @@
 
 #include "BattleShipMap.h"
 
-CBattleShipMap::CBattleShipMap() : Pane(4, 4, MAP_SIZE + 3, MAP_SIZE + 2) {
-    for (int i = 0; i < MAP_SIZE; i++) {
-        for (int j = 0; j < MAP_SIZE; ++j) {
-            // 맵 데이터 초기화
-            m_mapData[i][j] = '0';
-        }
+BattleShipMap::BattleShipMap() : Pane(4, 4, MAP_SIZE + 3, MAP_SIZE + 2) {
+  for (int i = 0; i < MAP_SIZE; i++) {
+    for (int j = 0; j < MAP_SIZE; ++j) {
+      // 맵 데이터 초기화
+      map_data_[i][j] = '0';
     }
+  }
 
-    // 칸 구별 이름
-    for (int i = 0; i < MAP_SIZE; ++i) {
-        mvprintw(i + 1 + m_y, m_x - 1, "%c", 'A' + i);
-        mvprintw(m_y + m_height, m_x + 2 + i, "%d", 1 + i);
-    }
+  // 칸 구별 이름
+  for (int i = 0; i < MAP_SIZE; ++i) {
+    mvprintw(i + 1 + y_, x_ - 1, "%c", 'A' + i);
+    mvprintw(y_ + height_, x_ + 2 + i, "%d", 1 + i);
+  }
 
-    // 타이틀
-    mvwprintw(m_pWindow, 0, 3, "< MAP >");
+  // 타이틀
+  mvwprintw(window_, 0, 3, "< MAP >");
 }
 
-CBattleShipMap::~CBattleShipMap() {}
+BattleShipMap::~BattleShipMap() {}
 
-void CBattleShipMap::Draw() {
-    wattron(m_pWindow, COLOR_PAIR(1));
-    for (int i = 0; i < MAP_SIZE; ++i) {
-        for (int j = 0; j < MAP_SIZE; ++j) {
-            mvwprintw(m_pWindow, i + 1, j + 2, "%c", m_mapData[i][j]);
-        }
+void BattleShipMap::Draw() {
+  wattron(window_, COLOR_PAIR(1));
+  for (int i = 0; i < MAP_SIZE; ++i) {
+    for (int j = 0; j < MAP_SIZE; ++j) {
+      mvwprintw(window_, i + 1, j + 2, "%c", map_data_[i][j]);
     }
-    wattroff(m_pWindow, COLOR_PAIR(1));
+  }
+  wattroff(window_, COLOR_PAIR(1));
 
-    wrefresh(m_pWindow);
+  wrefresh(window_);
 }
