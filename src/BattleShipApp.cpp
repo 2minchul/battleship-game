@@ -1,11 +1,12 @@
-//
-// Created by user on 18. 6. 1.
-//
+/*
+ * Copyright 2018 MinChul Lee.
+ *
+ * Use of this source code is governed by a WTFPL license that can be
+ * found in the LICENSE file.
+ */
 
 #include <ncurses.h>
 #include "BattleShipApp.h"
-#include "BattleShipMap.h"
-#include "StatPane.h"
 
 void CBattleShipApp::init() {
     initscr();

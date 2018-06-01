@@ -1,6 +1,9 @@
-//
-// Created by user on 18. 6. 1.
-//
+/*
+ * Copyright 2018 MinChul Lee.
+ *
+ * Use of this source code is governed by a WTFPL license that can be
+ * found in the LICENSE file.
+ */
 
 #ifndef BATTLESHIP_BATTLESHIPAPP_H
 #define BATTLESHIP_BATTLESHIPAPP_H
@@ -11,6 +14,7 @@
 class CBattleShipApp {
 public:
     CBattleShipApp();
+
     ~CBattleShipApp();
 
     void Play();
