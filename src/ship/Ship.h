@@ -24,15 +24,4 @@ class Ship {
 
 };
 
-enum HitResult { MISS, HIT, DESTROY, GAME_CLEAR };
-
-enum ShipType {
-  SHIP_NONE = 0,
-  AIRCRAFT = 5,
-  BATTLESHIP = 4,
-  CRUISER = 3,
-  DESTROYER = 2,
-  SHIP_CANT_PLACE = -1
-};
-
 #endif //BATTLESHIP_SHIP_SHIP_H_
