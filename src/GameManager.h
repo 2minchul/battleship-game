@@ -9,4 +9,9 @@ class GameManager {
 
 };
 
-#endif //BATTLESHIP_GAMEMANAGER_H_
+struct Position {
+  int x, y;
+  Position(int x, int y) : x(x), y(y) {}
+};
+
+#endif // BATTLESHIP_GAMEMANAGER_H_
