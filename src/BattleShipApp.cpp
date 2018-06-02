@@ -21,7 +21,7 @@ void BattleShipApp::init() {
   initColor();
 
   map_ = new BattleShipMap();
-  stat_pane_ = new StatPane(30, 3, 30, 6);
+  stat_pane_ = new StatPane(30, 3, 30, 7);
   input_pane_ = new InputPane(30, 15, 30, 4);
 }
 

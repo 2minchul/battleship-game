@@ -9,7 +9,9 @@
  * 20163137 이민철
  */
 
+#include <string>
 #include "StatPane.h"
+#include "../GameManager.h"
 
 StatPane::StatPane(int x, int y, int width, int height)
     : Pane(x, y, width, height) {
@@ -22,10 +24,13 @@ StatPane::~StatPane() {}
 
 void StatPane::Draw() {
   wattron(window_, COLOR_PAIR(COLOR_STATUS));
-  mvwprintw(window_, 1, 2, "AIRCRAFT : AAAAA");
-  mvwprintw(window_, 2, 2, "BATTLESHIP : BBBB");
-  mvwprintw(window_, 3, 2, "CRUISER : CCC");
-  mvwprintw(window_, 4, 2, "DESTROYER : DD DD");
+  std::string str = "TURN : ";
+  str.append(std::to_string(GameManager::GetInstance()->GetTurn()));
+  mvwprintw(window_, 1, 2, str.c_str());
+  mvwprintw(window_, 2, 2, "AIRCRAFT : AAAAA");
+  mvwprintw(window_, 3, 2, "BATTLESHIP : BBBB");
+  mvwprintw(window_, 4, 2, "CRUISER : CCC");
+  mvwprintw(window_, 5, 2, "DESTROYER : DD DD");
   wattroff(window_, COLOR_PAIR(COLOR_STATUS));
 
   wrefresh(window_);
