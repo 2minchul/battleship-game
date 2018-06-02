@@ -11,7 +11,9 @@
 
 #include "StatPane.h"
 
-StatPane::StatPane(int x, int y, int width, int height) : Pane(x, y, width, height) {
+StatPane::StatPane(int x, int y, int width, int height)
+    : Pane(x, y, width, height) {
+
   // 타이틀
   mvwprintw(window_, 0, 3, "< STATUS >");
 }
@@ -29,7 +31,9 @@ void StatPane::Draw() {
   wrefresh(window_);
 }
 
-InputPane::InputPane(int x, int y, int width, int height) : Pane(x, y, width, height) {
+InputPane::InputPane(int x, int y, int width, int height)
+    : Pane(x, y, width, height) {
+
   // 타이틀
   mvwprintw(window_, 0, 3, "< INPUT >");
 }
