@@ -25,13 +25,13 @@ class BattleShipApp {
   void Play();
 
  protected:
-  void init();
+  void Init();
 
   void Render();
 
   void Destroy();
 
-  void initColor();
+  void InitColor();
 
  protected:
   BattleShipMap *map_;

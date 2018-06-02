@@ -12,20 +12,20 @@
 
 #include "BattleShipApp.h"
 
-void BattleShipApp::init() {
+void BattleShipApp::Init() {
   initscr();
   start_color();
   cbreak();
   refresh();
 
-  initColor();
+  InitColor();
 
   map_ = new BattleShipMap();
   stat_pane_ = new StatPane(30, 3, 30, 7);
   input_pane_ = new InputPane(30, 15, 30, 4);
 }
 
-void BattleShipApp::initColor() {
+void BattleShipApp::InitColor() {
   //컬러 세팅
   init_pair(COLOR_MAP, COLOR_GREEN, COLOR_BLACK);
   init_pair(COLOR_STATUS, COLOR_CYAN, COLOR_BLACK);
@@ -33,7 +33,7 @@ void BattleShipApp::initColor() {
 }
 
 void BattleShipApp::Play() {
-  init();
+  Init();
   Render();
   Destroy();
 }
