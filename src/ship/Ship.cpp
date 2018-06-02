@@ -12,7 +12,7 @@
 
 #include "Ship.h"
 
-Ship::Ship(int x, int y, int type, const char *name)
+Ship::Ship(int x, int y, int type, char name)
     : type_(type), size_(type), hp_(type), name_(name) {
   SetPosition(x, y);
 }
