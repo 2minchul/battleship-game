@@ -12,7 +12,8 @@
 
 #include "Ship.h"
 
-Ship::Ship(int x, int y, int type) : type_(type), size_(type), hp_(type) {
+Ship::Ship(int x, int y, int type, const char *name)
+    : type_(type), size_(type), hp_(type), name_(name) {
   SetPosition(x, y);
 }
 
@@ -34,4 +35,8 @@ Position *Ship::GetPosition() {
 
 int Ship::HitCheck() {
   return MISS;
+}
+
+char Ship::GetName() {
+  return name_;
 }

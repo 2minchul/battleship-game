@@ -12,4 +12,4 @@
 
 #include "Aircraft.h"
 
-Aircraft::Aircraft(int x, int y) : Ship(x, y, AIRCRAFT) {}
+Aircraft::Aircraft(int x, int y) : Ship(x, y, AIRCRAFT, 'A') {}

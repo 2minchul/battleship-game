@@ -17,10 +17,11 @@
 
 class Ship {
  public:
-  Ship(int x, int y, int type);
+  Ship(int x, int y, int type, char name);
   int GetSize();
   int GetType();
   int HitCheck();
+  char GetName();
   Position *GetPosition();
   void SetPosition(int x, int y);
 
@@ -29,6 +30,7 @@ class Ship {
   int size_;
   int type_;
   struct Position *position_;
+  char name_;
 
 };
 

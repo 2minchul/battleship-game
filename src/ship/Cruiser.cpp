@@ -12,4 +12,4 @@
 
 #include "Cruiser.h"
 
-Cruiser::Cruiser(int x, int y) : Ship(x, y, CRUISER) {}
+Cruiser::Cruiser(int x, int y) : Ship(x, y, CRUISER, 'C') {}
