@@ -23,4 +23,8 @@ enum ShipType {
   SHIP_CANT_PLACE = -1
 };
 
+enum GameMode {
+  PLAY_INPUT, PLAY_RANDOM, PLAY_FOLLOW_AI
+};
+
 #endif //BATTLESHIP_TYPES_H_
