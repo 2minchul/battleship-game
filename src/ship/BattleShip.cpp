@@ -3,4 +3,5 @@
 //
 
 #include "BattleShip.h"
+
 BattleShip::BattleShip(int x, int y) : Ship(x, y, BATTLESHIP) {}
