@@ -20,6 +20,12 @@
 //#define COLOR_STATUS 2
 //#define COLOR_INPUT 3
 
+enum Colors {
+  COLOR_MAP = 1,
+  COLOR_STATUS = 2,
+  COLOR_INPUT = 3
+};
+
 class Pane {
  public:
   Pane(int x, int y, int width, int height);
@@ -29,11 +35,6 @@ class Pane {
   virtual ~Pane();
 
   virtual void Draw();
-  enum Colors {
-    COLOR_MAP = 1,
-    COLOR_STATUS = 2,
-    COLOR_INPUT = 3
-  };
 
  protected:
   int width_, height_;
