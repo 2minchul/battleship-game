@@ -18,14 +18,18 @@ void BattleShipApp::init() {
   cbreak();
   refresh();
 
-  //컬러 세팅
-  init_pair(COLOR_MAP, COLOR_GREEN, COLOR_BLACK);
-  init_pair(COLOR_STATUS, COLOR_CYAN, COLOR_BLACK);
-  init_pair(COLOR_INPUT, COLOR_YELLOW, COLOR_BLACK);
+  initColor();
 
   map_ = new BattleShipMap();
   stat_pane_ = new StatPane(30, 3, 30, 6);
   input_pane_ = new InputPane(30, 15, 30, 4);
+}
+
+void BattleShipApp::initColor() {
+  //컬러 세팅
+  init_pair(COLOR_MAP, COLOR_GREEN, COLOR_BLACK);
+  init_pair(COLOR_STATUS, COLOR_CYAN, COLOR_BLACK);
+  init_pair(COLOR_INPUT, COLOR_YELLOW, COLOR_BLACK);
 }
 
 void BattleShipApp::Play() {

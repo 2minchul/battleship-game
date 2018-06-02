@@ -31,10 +31,13 @@ class BattleShipApp {
 
   void Destroy();
 
+  void initColor();
+
  protected:
   BattleShipMap *map_;
   StatPane *stat_pane_;
   InputPane *input_pane_;
+
 };
 
 #endif  // BATTLESHIP_BATTLESHIPAPP_H_
