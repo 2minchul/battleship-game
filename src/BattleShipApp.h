@@ -13,8 +13,8 @@
 #define BATTLESHIP_BATTLESHIPAPP_H_
 
 #include <ncurses.h>
-#include "BattleShipMap.h"
-#include "StatPane.h"
+#include "pane/BattleShipMap.h"
+#include "pane/StatPane.h"
 
 class BattleShipApp {
  public:

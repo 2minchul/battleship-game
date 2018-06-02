@@ -11,8 +11,8 @@
 
 
 
-#ifndef BATTLESHIP_PANE_H_
-#define BATTLESHIP_PANE_H_
+#ifndef BATTLESHIP_PANE_PANE_H_
+#define BATTLESHIP_PANE_PANE_H_
 
 #include <ncurses.h>
 
@@ -42,4 +42,4 @@ class Pane {
   WINDOW *window_;
 };
 
-#endif //BATTLESHIP_PANE_H_
+#endif //BATTLESHIP_PANE_PANE_H_

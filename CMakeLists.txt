@@ -10,11 +10,11 @@ add_executable(battleship
         src/main.cpp
         src/BattleShipApp.cpp
         src/BattleShipApp.h
-        src/BattleShipMap.cpp
-        src/BattleShipMap.h
-        src/Pane.cpp
-        src/Pane.h
-        src/StatPane.cpp
-        src/StatPane.h)
+        src/pane/BattleShipMap.cpp
+        src/pane/BattleShipMap.h
+        src/pane/Pane.cpp
+        src/pane/Pane.h
+        src/pane/StatPane.cpp
+        src/pane/StatPane.h src/GameManager.cpp src/GameManager.h)
 
 target_link_libraries(battleship ${CURSES_LIBRARIES})

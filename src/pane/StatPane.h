@@ -9,8 +9,8 @@
  * 20163137 이민철
  */
 
-#ifndef BATTLESHIP_STATPANE_H_
-#define BATTLESHIP_STATPANE_H_
+#ifndef BATTLESHIP_PANE_STATPANE_H_
+#define BATTLESHIP_PANE_STATPANE_H_
 
 #include <ncurses.h>
 #include "Pane.h"
@@ -34,4 +34,4 @@ class InputPane : public Pane {
   virtual void Draw();
 };
 
-#endif //BATTLESHIP_STATPANE_H_
+#endif //BATTLESHIP_PANE_STATPANE_H_
