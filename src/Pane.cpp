@@ -11,7 +11,9 @@
 
 #include "Pane.h"
 
-Pane::Pane(int x, int y, int width, int height) : x_(x), y_(y), width_(width), height_(height) {
+Pane::Pane(int x, int y, int width, int height)
+    : x_(x), y_(y), width_(width), height_(height) {
+
   window_ = newwin(height, width, y, x);
   box(window_, 0, 0);
   wrefresh(window_);
