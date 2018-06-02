@@ -36,6 +36,17 @@ void GameManager::Init() {
 
 }
 
+GameManager::GameManager() {
+  attacker_ = new Player();
+  defender_ = new Player();
+  Init();
+}
+
+GameManager::~GameManager() {
+  delete attacker_;
+  delete defender_;
+}
+
 bool GameManager::IsDeadShip() {
   return false;
 }

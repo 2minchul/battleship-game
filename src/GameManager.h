@@ -18,9 +18,9 @@
 
 class GameManager {
  private:
-  GameManager() {};
+  GameManager();
+  ~GameManager();
   GameManager(const GameManager &other);
-  ~GameManager() {};
 
   static GameManager *instance;
 
