@@ -14,15 +14,22 @@
 int Player::Attack(struct Position *position) {
   return 0;
 }
-void Player::Init() {
 
+void Player::Init() {
+  map_ = new BattleShipMap();
 }
+
 void Player::Render() {
 
 }
+
 void Player::SetHitResult() {
 
 }
+
 void Player::SetupShips() {
 
+}
+Player::~Player() {
+  delete map_;
 }

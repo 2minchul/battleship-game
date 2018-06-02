@@ -13,11 +13,12 @@
 #ifndef BATTLESHIP_PLAYER_H_
 #define BATTLESHIP_PLAYER_H_
 
-#include <ncurses.h>
 #include "types.h"
+#include "pane/BattleShipMap.h"
 
 class Player {
  public:
+  ~Player();
   int Attack(struct Position *position);
   void Init();
   void Render();
@@ -25,7 +26,7 @@ class Player {
   void SetupShips();
 
  protected:
-  WINDOW *map_;
+  BattleShipMap *map_;
 };
 
 #endif //BATTLESHIP_PLAYER_H_
