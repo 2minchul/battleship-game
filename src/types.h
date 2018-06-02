@@ -8,6 +8,8 @@
 struct Position {
   int x, y;
   Position(int x, int y) : x(x), y(y) {}
+  Position operator+(Position position);
+  Position operator-(Position position);
 };
 
 enum HitResult { MISS, HIT, DESTROY, GAME_CLEAR };
