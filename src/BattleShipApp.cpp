@@ -11,6 +11,7 @@
 
 
 #include "BattleShipApp.h"
+#include "GameManager.h"
 
 void BattleShipApp::Init() {
   initscr();
@@ -30,11 +31,16 @@ void BattleShipApp::InitColor() {
   init_pair(COLOR_MAP, COLOR_GREEN, COLOR_BLACK);
   init_pair(COLOR_STATUS, COLOR_CYAN, COLOR_BLACK);
   init_pair(COLOR_INPUT, COLOR_YELLOW, COLOR_BLACK);
+  init_pair(COLOR_DEBUG, COLOR_WHITE, COLOR_RED);
 }
 
 void BattleShipApp::Play() {
+  GameManager *game_manger = GameManager::GetInstance();
+  char input_buffer[2];
   Init();
   Render();
+  input_pane_->Input(input_buffer);
+  game_manger->AttackByInput();
   Destroy();
 }
 

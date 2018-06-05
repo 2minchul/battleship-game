@@ -23,7 +23,8 @@
 enum Colors {
   COLOR_MAP = 1,
   COLOR_STATUS = 2,
-  COLOR_INPUT = 3
+  COLOR_INPUT = 3,
+  COLOR_DEBUG = 10
 };
 
 class Pane {

@@ -53,3 +53,19 @@ void InputPane::Draw() {
 
   wrefresh(window_);
 }
+
+void InputPane::Input(char *str) {
+  std::string line;
+  int x = getmaxx(window_) - 10;
+
+  for (int i = 0; i < x; i++) {
+    line.append(" ");
+  }
+
+  wrefresh(window_);
+  mvwprintw(window_, 2, 9, line.c_str());
+  wmove(window_, 2, 9);
+  wrefresh(window_);
+  wgetstr(window_, str);
+
+}

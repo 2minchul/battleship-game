@@ -31,7 +31,9 @@ class InputPane : public Pane {
 
   ~InputPane();
 
-  virtual void Draw();
+  void Input(char *str);
+
+  void Draw() override;
 };
 
 #endif //BATTLESHIP_PANE_STATPANE_H_
