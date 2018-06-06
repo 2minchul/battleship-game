@@ -15,6 +15,7 @@
 
 struct Position {
   int x, y;
+  Position() = default;
   Position(int x, int y) : x(x), y(y) {}
   Position operator+(Position position);
   Position operator-(Position position);

@@ -9,7 +9,7 @@
  * 20163137 이민철
  */
 
-#include <string>
+
 #include "StatPane.h"
 #include "../GameManager.h"
 
@@ -68,4 +68,12 @@ void InputPane::Input(char *str) {
   wrefresh(window_);
   wgetstr(window_, str);
 
+}
+
+void InputPane::PrintResult(char *string) {
+  wattron(window_, COLOR_PAIR(COLOR_INPUT));
+  mvwprintw(window_, 3, 2, string);
+  wattroff(window_, COLOR_PAIR(COLOR_INPUT));
+
+  wrefresh(window_);
 }

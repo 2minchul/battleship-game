@@ -23,7 +23,7 @@ void BattleShipApp::Init() {
 
   map_ = new BattleShipMap();
   stat_pane_ = new StatPane(30, 3, 30, 7);
-  input_pane_ = new InputPane(30, 15, 30, 4);
+  input_pane_ = new InputPane(30, 15, 30, 5);
 }
 
 void BattleShipApp::InitColor() {
@@ -40,7 +40,8 @@ void BattleShipApp::Play() {
   Init();
   Render();
   input_pane_->Input(input_buffer);
-  game_manger->AttackByInput();
+  input_pane_->PrintResult(input_buffer);
+//  game_manger->AttackByInput();
   Destroy();
 }
 

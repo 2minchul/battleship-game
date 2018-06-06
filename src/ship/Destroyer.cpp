@@ -12,4 +12,4 @@
 
 #include "Destroyer.h"
 
-Destroyer::Destroyer(int x, int y) : Ship(x, y, DESTROYER, 'D') {}
+Destroyer::Destroyer() : Ship(DESTROYER, const_cast<char *>("Destroyer")) {}

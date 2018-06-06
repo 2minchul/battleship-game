@@ -24,8 +24,8 @@ int GameManager::GetGameMode() {
   return game_mode_;
 }
 
-int GameManager::GetShips() {
-  return 0;
+Ship *GameManager::GetShips() {
+  return ships_;
 }
 
 int GameManager::GetTurn() {
@@ -33,7 +33,7 @@ int GameManager::GetTurn() {
 }
 
 void GameManager::Init() {
-
+//  ships_[0] = Aircraft();
 }
 
 GameManager::GameManager() {

@@ -13,24 +13,24 @@
 #ifndef BATTLESHIP_SHIP_SHIP_H_
 #define BATTLESHIP_SHIP_SHIP_H_
 
-#include "../GameManager.h"
+#include "../types.h"
 
 class Ship {
  public:
-  Ship(int x, int y, int type, char name);
+  Ship(int type, char *name);
   int GetSize();
   int GetType();
-  int HitCheck();
-  char GetName();
+  int HitCheck(int x, int y);
+  char *GetName();
   Position *GetPosition();
-  void SetPosition(int x, int y);
+  void SetPosition(int begin_x, int begin_y, int end_x, int end_y);
 
  protected:
   int hp_;
   int size_;
   int type_;
-  struct Position *position_;
-  char name_;
+  struct Position position_[2];
+  char *name_;
 
 };
 

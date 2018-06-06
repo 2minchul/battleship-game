@@ -951,7 +951,7 @@ class _CppLintState(object):
       self.errors_by_category[category] += 1
 
   def PrintErrorCounts(self):
-    """Print a summary of errors by category, and the total."""
+    """PrintResult a summary of errors by category, and the total."""
     for category, count in self.errors_by_category.iteritems():
       sys.stderr.write('Category \'%s\' errors found: %d\n' %
                        (category, count))

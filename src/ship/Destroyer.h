@@ -15,9 +15,9 @@
 
 #include "Ship.h"
 
-class Destroyer : Ship {
+class Destroyer : public Ship {
  public:
-  Destroyer(int x, int y);
+  Destroyer();
 };
 
 #endif //BATTLESHIP_SHIP_DESTROYER_H_

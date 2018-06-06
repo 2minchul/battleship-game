@@ -13,6 +13,7 @@
 #define BATTLESHIP_PANE_STATPANE_H_
 
 #include <ncurses.h>
+#include <string>
 #include "Pane.h"
 
 class StatPane : Pane {
@@ -34,6 +35,7 @@ class InputPane : public Pane {
   void Input(char *str);
 
   void Draw() override;
+  void PrintResult(char *string);
 };
 
 #endif //BATTLESHIP_PANE_STATPANE_H_

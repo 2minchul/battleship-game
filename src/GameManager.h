@@ -15,6 +15,11 @@
 
 #include "types.h"
 #include "Player.h"
+#include "ship/Ship.h"
+#include "ship/Aircraft.h"
+#include "ship/BattleShip.h"
+#include "ship/Cruiser.h"
+#include "ship/Destroyer.h"
 
 class GameManager {
  private:
@@ -30,7 +35,7 @@ class GameManager {
   void AddTurn();
   void AttackByInput();
   int GetGameMode();
-  int GetShips();
+  Ship *GetShips();
   int GetTurn();
   void Init();
   bool IsDeadShip();
@@ -41,7 +46,7 @@ class GameManager {
   Player *attacker_;
   Player *defender_;
   int game_mode_ = PLAY_INPUT;
-  int ships_;
+  Ship ships_[5] = {Aircraft(), BattleShip(), Cruiser(), Destroyer(), Destroyer()};
   int turn_ = 0;
 };
 

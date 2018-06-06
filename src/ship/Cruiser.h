@@ -15,9 +15,9 @@
 
 #include "Ship.h"
 
-class Cruiser : Ship {
+class Cruiser : public Ship {
  public:
-  Cruiser(int x, int y);
+  Cruiser();
 
 };
 

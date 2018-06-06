@@ -12,4 +12,4 @@
 
 #include "Aircraft.h"
 
-Aircraft::Aircraft(int x, int y) : Ship(x, y, AIRCRAFT, 'A') {}
+Aircraft::Aircraft() : Ship(AIRCRAFT, const_cast<char *>("Aircraft")) {}

@@ -42,3 +42,19 @@ void BattleShipMap::Draw() {
 
   wrefresh(window_);
 }
+
+MapData BattleShipMap::GetMapData() {
+  return map_data_;
+}
+
+char BattleShipMap::ShipToChar(Ship *ship) {
+  return ship->GetName()[0];
+}
+
+void BattleShipMap::SetMapData(char c, int x, int y) {
+  map_data_[x][y] = c;
+}
+
+void BattleShipMap::SetMapData(Ship *ship, int x, int y) {
+  SetMapData(ShipToChar(ship), x, y);
+}
