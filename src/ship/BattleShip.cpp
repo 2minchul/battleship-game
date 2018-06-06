@@ -12,4 +12,4 @@
 
 #include "BattleShip.h"
 
-BattleShip::BattleShip() : Ship(BATTLESHIP, const_cast<char *>("BattleShip")) {}
+BattleShip::BattleShip() : Ship(4, BATTLESHIP, const_cast<char *>("BattleShip")) {}

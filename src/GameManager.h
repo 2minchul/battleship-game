@@ -42,11 +42,18 @@ class GameManager {
   void Render();
   void SetGameMode(int game_mode);
 
- protected:
   Player *attacker_;
   Player *defender_;
+
+ protected:
   int game_mode_ = PLAY_INPUT;
-  Ship ships_[5] = {Aircraft(), BattleShip(), Cruiser(), Destroyer(), Destroyer()};
+  Ship ships_[5] = {
+      Aircraft(),
+      BattleShip(),
+      Cruiser(),
+      Destroyer(),
+      Destroyer()
+  };
   int turn_ = 0;
 };
 

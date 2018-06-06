@@ -12,8 +12,8 @@
 
 #include "Ship.h"
 
-Ship::Ship(int type, char *name)
-    : type_(type), size_(type), hp_(type), name_(name) {
+Ship::Ship(int size, int type, char *name)
+    : type_(type), size_(size), hp_(type), name_(name) {
 }
 
 void Ship::SetPosition(int begin_x, int begin_y, int end_x, int end_y) {
@@ -21,6 +21,10 @@ void Ship::SetPosition(int begin_x, int begin_y, int end_x, int end_y) {
   position_[0].y = begin_y;
   position_[1].x = end_x;
   position_[1].y = end_y;
+}
+
+void Ship::SetPosition(Position *a, Position *b) {
+  SetPosition(a->x, a->y, b->x, b->y);
 }
 
 int Ship::GetSize() {

@@ -13,10 +13,8 @@
 
 Pane::Pane(int x, int y, int width, int height)
     : x_(x), y_(y), width_(width), height_(height) {
-
   window_ = newwin(height, width, y, x);
   box(window_, 0, 0);
-  wrefresh(window_);
 }
 
 Pane::~Pane() {
@@ -24,7 +22,7 @@ Pane::~Pane() {
 }
 
 void Pane::Draw() {
-  box(window_, 0, 0);
+//  box(window_, 0, 0);
   wrefresh(window_);
 }
 

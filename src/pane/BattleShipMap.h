@@ -18,22 +18,24 @@
 #define MAP_SIZE 8
 typedef char (*MapData)[MAP_SIZE];
 
-class BattleShipMap : Pane {
+class BattleShipMap : public Pane {
  public:
   BattleShipMap();
+  BattleShipMap(int x, int y, const char *title);
 
-  ~BattleShipMap();
 
-  void Draw();
+  void Draw() override;
 
   MapData GetMapData();
 
   char ShipToChar(Ship *ship);
-  void SetMapData(char c, int x, int y);
-  void SetMapData(Ship *ship, int x, int y);
+  void SetMapData(char c, Position *a, Position *b);
+  void SetMapData(Ship *ship, Position *a, Position *b);
+  int GetMapData(int x, int y);
 
  protected:
   char map_data_[MAP_SIZE][MAP_SIZE];
+  void InitMap(const char *title);
 
 };
 

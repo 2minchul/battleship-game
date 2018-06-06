@@ -33,13 +33,8 @@ int GameManager::GetTurn() {
 }
 
 void GameManager::Init() {
-//  ships_[0] = Aircraft();
-}
-
-GameManager::GameManager() {
-  attacker_ = new Player();
-  defender_ = new Player();
-  Init();
+  defender_ = new Player(4, 1, "DEFENDER");
+  attacker_ = new Player(4, 13, "ATTACKER");
 }
 
 GameManager::~GameManager() {
@@ -52,7 +47,8 @@ bool GameManager::IsDeadShip() {
 }
 
 void GameManager::Render() {
-
+  attacker_->Render();
+  defender_->Render();
 }
 
 void GameManager::SetGameMode(int game_mode) {
@@ -60,8 +56,11 @@ void GameManager::SetGameMode(int game_mode) {
 }
 
 GameManager *GameManager::GetInstance() { // Singleton instance
-  if (instance == nullptr) instance = new GameManager();
+  if (instance == nullptr) {
+    instance = new GameManager();
+  }
   return instance;
 }
 
 GameManager *GameManager::instance = nullptr;
+GameManager::GameManager() = default;

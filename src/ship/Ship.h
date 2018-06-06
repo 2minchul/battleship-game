@@ -17,13 +17,14 @@
 
 class Ship {
  public:
-  Ship(int type, char *name);
+  Ship(int size, int type, char *name);
   int GetSize();
   int GetType();
   int HitCheck(int x, int y);
   char *GetName();
   Position *GetPosition();
   void SetPosition(int begin_x, int begin_y, int end_x, int end_y);
+  void SetPosition(Position *a, Position *b);
 
  protected:
   int hp_;

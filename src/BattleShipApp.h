@@ -34,7 +34,6 @@ class BattleShipApp {
   void InitColor();
 
  protected:
-  BattleShipMap *map_;
   StatPane *stat_pane_;
   InputPane *input_pane_;
 

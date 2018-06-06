@@ -24,11 +24,11 @@ struct Position {
 enum HitResult { MISS, HIT, DESTROY, GAME_CLEAR };
 
 enum ShipType {
-  SHIP_NONE = 0,
-  AIRCRAFT = 5,
-  BATTLESHIP = 4,
-  CRUISER = 3,
-  DESTROYER = 2,
+  SHIP_NONE = '0',
+  AIRCRAFT = 'A',
+  BATTLESHIP = 'B',
+  CRUISER = 'C',
+  DESTROYER = 'D',
   SHIP_CANT_PLACE = -1
 };
 

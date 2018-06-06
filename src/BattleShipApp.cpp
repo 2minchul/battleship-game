@@ -20,8 +20,6 @@ void BattleShipApp::Init() {
   refresh();
 
   InitColor();
-
-  map_ = new BattleShipMap();
   stat_pane_ = new StatPane(30, 3, 30, 7);
   input_pane_ = new InputPane(30, 15, 30, 5);
 }
@@ -36,19 +34,26 @@ void BattleShipApp::InitColor() {
 
 void BattleShipApp::Play() {
   GameManager *game_manger = GameManager::GetInstance();
-  char input_buffer[2];
+  char input_buffer[3];
   Init();
+  game_manger->Init();
+
+  game_manger->defender_->SetupShips();
   Render();
+  game_manger->Render();
+
   input_pane_->Input(input_buffer);
   input_pane_->PrintResult(input_buffer);
+
 //  game_manger->AttackByInput();
   Destroy();
 }
 
 void BattleShipApp::Render() {
-  mvprintw(1, 1, "<< Battle Ship Game >>");
+  GameManager *game_manager = GameManager::GetInstance();
+  mvprintw(0, 1, "<< Battle Ship Game >>");
 
-  map_->Draw();
+  game_manager->Render();
   stat_pane_->Draw();
   input_pane_->Draw();
 
@@ -58,7 +63,8 @@ void BattleShipApp::Render() {
 void BattleShipApp::Destroy() {
   getch();
   endwin();
-  delete map_;
+  delete stat_pane_;
+  delete input_pane_;
 }
 
 BattleShipApp::~BattleShipApp() = default;

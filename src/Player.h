@@ -16,8 +16,11 @@
 #include "types.h"
 #include "pane/BattleShipMap.h"
 
+
 class Player {
  public:
+  Player();
+  Player(int x, int y, const char *title);
   ~Player();
   int Attack(struct Position *position);
   void Init();
