@@ -34,7 +34,7 @@ void BattleShipApp::InitColor() {
 
 void BattleShipApp::Play() {
   GameManager *game_manger = GameManager::GetInstance();
-  char input_buffer[3];
+  int x, y;
   Init();
   game_manger->Init();
 
@@ -42,8 +42,10 @@ void BattleShipApp::Play() {
   Render();
   game_manger->Render();
 
-  input_pane_->Input(input_buffer);
-  input_pane_->PrintResult(input_buffer);
+  input_pane_->Input(x, y);
+  game_manger->AttackByInput();
+  refresh();
+//  input_pane_->PrintResult(s);
 
 //  game_manger->AttackByInput();
   Destroy();

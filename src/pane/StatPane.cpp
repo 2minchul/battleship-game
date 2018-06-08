@@ -54,19 +54,47 @@ void InputPane::Draw() {
   wrefresh(window_);
 }
 
-void InputPane::Input(char *str) {
-  std::string line;
-  int x = getmaxx(window_) - 10;
-
-  for (int i = 0; i < x; i++) {
-    line.append(" ");
-  }
-
-  wrefresh(window_);
-  mvwprintw(window_, 2, 9, line.c_str());
+void InputPane::Input(int &x, int &y) {
+  char str[3];
+  bool invalid_in = false;
+  int _in[2];
+  int _in_index = 0;
+  int max_x = getmaxx(window_) - 10;
+  std::string empty_line(static_cast<size_t >(max_x), ' ');
+//  for (int i = 0; i < max_x; i++) {
+//    line.append(" ");
+//  }
+  mvwprintw(window_, 2, 9, empty_line.c_str());
   wmove(window_, 2, 9);
   wrefresh(window_);
   wgetstr(window_, str);
+
+  for (int i = 0; i < 3; i++) {
+    if (str[i] == ' ') continue;
+    if (1 < _in_index) break;
+    if ('1' <= str[i] && str[i] <= '8') {
+      _in[_in_index++] = str[i] - '1';
+    } else if ('A' <= str[i] && str[i] <= 'H') {
+      _in[_in_index++] = str[i] - 'A';
+    } else if ('a' <= str[i] && str[i] <= 'h') {
+      _in[_in_index++] = str[i] - 'a';
+    }
+  }
+
+  if (_in_index != 2) {
+    invalid_in = true;
+  }
+
+  if (invalid_in) {
+    char *_fail_str;
+    _fail_str = const_cast<char *>("Invalid input!");
+    PrintResult(_fail_str);
+    getch();
+    PrintResult(const_cast<char *>(empty_line.c_str()));
+    Input(x, y);
+  } else {
+    x = _in[0], y = _in[1];
+  }
 
 }
 

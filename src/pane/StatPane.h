@@ -32,10 +32,9 @@ class InputPane : public Pane {
 
   ~InputPane();
 
-  void Input(char *str);
-
   void Draw() override;
   void PrintResult(char *string);
+  void Input(int &x, int &y);
 };
 
 #endif //BATTLESHIP_PANE_STATPANE_H_
